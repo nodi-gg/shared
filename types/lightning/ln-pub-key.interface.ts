@@ -1,5 +1,5 @@
 export class LnPubKey extends String {
-  constructor(any) {
+  constructor(any: any) {
     super(any);
   }
 }
