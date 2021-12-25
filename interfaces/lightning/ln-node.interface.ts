@@ -1,6 +1,6 @@
-import { LnNodeAddress } from '../types/ln-node-address.interface';
-import { LnPubKey } from '../types/ln-pub-key.interface';
-import { LnChannel } from './ln-channel.interface';
+import { LnNodeAddress } from '../../types/lightning/ln-node-address.interface';
+import { LnPubKey } from '../../types/lightning/ln-pub-key.interface';
+import { LnChannelInterface } from './ln-channel.interface';
 
 export interface LnNode {
   nodeId: LnPubKey;
@@ -8,5 +8,5 @@ export interface LnNode {
   color?: string;
   addresses: LnNodeAddress[];
   lastUpdate: Date;
-  channels?: LnChannel[];
+  channels?: LnChannelInterface[];
 }
