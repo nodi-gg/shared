@@ -1,18 +1,24 @@
-import { LnPubKey } from '../../types/lightning/ln-pub-key.interface';
-import { LnChannelFee } from './ln-channel-fee.interface';
+import {LnChannelParamsInterface} from "./ln-channel-params.interface";
+import {BitcoinTransaction} from "../bitcoin/bitcoin-transaction.interface";
+import {LnChannelStateEnum} from "./ln-channel-state.enum";
 
-export interface LnChannel {
-  channelId: number;
-  shortChannelId: string;
-  source: LnPubKey;
-  destination: LnPubKey;
-  source_fee: LnChannelFee;
-  destination_fee: LnChannelFee;
-  isActive: boolean;
-  isPublic: boolean;
-  delay: number; // Time Lock Delta
-  lastUpdate: Date;
-  capacity: number;
-  htlcMinimum?: number;
-  htlcMaximum?: number;
+export interface LnChannelInterface {
+    capacity: number;
+    commitTransactionFee: number;
+    commitTransactionWeight: number;
+    channelId: string;
+    channelState: LnChannelStateEnum;
+    isPartnerInitiated: boolean;
+    isPrivate: boolean;
+    localParams: LnChannelParamsInterface;
+    remoteParams: LnChannelParamsInterface;
+    pastStates: number;
+    paymentsPending: any[] // TODO: ln-payment inteface
+    received: number;
+    sent: number;
+    timeOffline: number;
+    timeOnline: number;
+    fundingTransaction: string;
+    transactionVout: number;
+    unsettledBalance: number;
 }
