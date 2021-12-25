@@ -1,5 +1,3 @@
 export type LnNodeAddress = {
-  type: string;
-  port: number;
-  address: string;
+  type: string; port: number; address: string;
 };

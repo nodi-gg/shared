@@ -1,6 +1,3 @@
-export enum LnChannelStateEnum{
-    CLOSING,
-    OPENING,
-    ACTIVE,
-    DISABLED
+export enum LnChannelStateEnum {
+  CLOSING, OPENING, ACTIVE, DISABLED
 }
