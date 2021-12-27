@@ -1,8 +1,8 @@
-import {LnChannelInterface} from '../../interfaces/lightning/ln-channel.interface';
-import {LnChannelStateEnum} from '../../interfaces/lightning/ln-channel-state.enum';
-import {LnChannelParamsInterface} from '../../interfaces/lightning/ln-channel-params.interface';
-import {LNDChannelInterface} from '../../interfaces/lightning/LND/LND-channel.interface';
-import {LnChannelFeeParamsModel} from '../../models/lightning/ln-channel-fee-params.model';
+import { LnChannelInterface } from '../../interfaces/lightning/ln-channel.interface';
+import { LnChannelStateEnum } from '../../interfaces/lightning/ln-channel-state.enum';
+import { LnChannelParamsInterface } from '../../interfaces/lightning/ln-channel-params.interface';
+import { LNDChannelInterface } from '../../interfaces/lightning/LND/LND-channel.interface';
+import { LnChannelFeeParamsModel } from '../../models/lightning/ln-channel-fee-params.model';
 
 export class LndToLightningAdapter implements LnChannelInterface {
   capacity: number;
@@ -39,7 +39,9 @@ export class LndToLightningAdapter implements LnChannelInterface {
     this.localParams.dust = LNDChannel.local_dust;
     this.localParams.given = LNDChannel.local_given;
     this.localParams.maxHtlcs = LNDChannel.local_max_htlcs;
-    this.localParams.maxPendingMtokens = Number(LNDChannel.local_max_pending_mtokens);
+    this.localParams.maxPendingMtokens = Number(
+      LNDChannel.local_max_pending_mtokens
+    );
     this.localParams.minHtlcMtokens = Number(LNDChannel.local_min_htlc_mtokens);
     this.localParams.reseve = LNDChannel.local_reserve;
     this.pastStates = LNDChannel.past_states;
@@ -52,17 +54,21 @@ export class LndToLightningAdapter implements LnChannelInterface {
     this.remoteParams.dust = LNDChannel.remote_dust;
     this.remoteParams.given = LNDChannel.remote_given;
     this.remoteParams.maxHtlcs = LNDChannel.remote_max_htlcs;
-    this.remoteParams.maxPendingMtokens = Number(LNDChannel.remote_max_pending_mtokens);
-    this.remoteParams.minHtlcMtokens = Number(LNDChannel.remote_min_htlc_mtokens);
+    this.remoteParams.maxPendingMtokens = Number(
+      LNDChannel.remote_max_pending_mtokens
+    );
+    this.remoteParams.minHtlcMtokens = Number(
+      LNDChannel.remote_min_htlc_mtokens
+    );
     this.remoteParams.reseve = LNDChannel.remote_reserve;
-    this.remoteParams.pubkey = LNDChannel.partner_public_key
+    this.remoteParams.pubkey = LNDChannel.partner_public_key;
     this.sent = LNDChannel.sent;
     this.timeOffline = LNDChannel.time_offline;
     this.timeOnline = LNDChannel.time_online;
     this.transactionVout = LNDChannel.transaction_vout;
     this.unsettledBalance = LNDChannel.unsettled_balance;
 
-    this.channelState = LnChannelStateEnum.DISABLED
+    this.channelState = LnChannelStateEnum.DISABLED;
 
     if (LNDChannel.is_active) {
       this.channelState = LnChannelStateEnum.ACTIVE;
