@@ -12,4 +12,6 @@ export interface LnChannelParamsInterface {
   minHtlcMtokens: number;
   reseve: number;
   fee: LnChannelFeeInterface;
+  alias?: string;
+  color?: string;
 }
