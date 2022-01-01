@@ -14,6 +14,5 @@ export interface BitcoinBlock {
   bits: string;
   difficulty: number;
   previousBlockhash: string;
-  nextBlockhash;
-  string;
+  nextBlockhash: string;
 }

@@ -121,4 +121,4 @@ export type LnPayment = {
     secret: string
     /** Rounded Down Tokens Sent to Destination */
     tokens: number
-}[]
+}

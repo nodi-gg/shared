@@ -75,4 +75,4 @@ export type LnInvoice = {
     secret: string
     /** Tokens */
     tokens: number
-}[]
+}
